@@ -1,0 +1,24 @@
+pipeline {
+	agent any
+	stages {
+	
+		stage ('STEP1') {
+		  steps {
+		     echo 'Hello, $FIRST_NAME $LAST_NAME'
+			 echo 'Welcome to $TECH demo pipeline'
+ 		  }
+		}
+		
+		stage ('STEP2') {
+		  steps {
+		     sleep 60
+ 		  }
+		}
+		
+		stage ('STEP3') {
+		  steps {
+		     echo 'Parameter Test Done !!!'
+ 		  }
+		}
+	}
+}
