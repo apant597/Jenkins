@@ -4,8 +4,8 @@ pipeline {
 	
 		stage ('STEP1') {
 		  steps {
-		     echo 'Hello, $FIRST_NAME $LAST_NAME'
-			 echo 'Welcome to $TECH demo pipeline'
+		     echo "Hello, $FIRST_NAME $LAST_NAME"
+	             echo "Welcome to $TECH demo pipeline"
  		  }
 		}
 		
