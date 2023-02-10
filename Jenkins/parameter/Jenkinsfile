@@ -6,7 +6,7 @@ pipeline {
 		  steps {
 		     echo "Hello, $FIRST_NAME $LAST_NAME"
 	             echo "Welcome to $TECH demo pipeline"
-	             echo "Global Parameter - $CAST_HOME_VAR: (CAST HOME)"  
+	             echo "Global Parameter (CAST HOME)- $CAST_HOME_VAR"  
  		  }
 		}
 		
