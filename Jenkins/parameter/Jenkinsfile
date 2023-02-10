@@ -12,7 +12,7 @@ pipeline {
 		
 		stage ('STEP2') {
 		  steps {
-		     sleep 60
+		     sleep 30
  		  }
 		}
 		
