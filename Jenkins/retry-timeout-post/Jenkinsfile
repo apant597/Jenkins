@@ -24,7 +24,7 @@ pipeline {
 			steps {
 				echo "TEST STEP - TIMEOUT"
 				timeout(time: 3, unit: 'SECONDS') {
-					sleep 7s
+					sleep 5s
 				}
 			}
 		}
