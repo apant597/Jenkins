@@ -6,7 +6,7 @@ pipeline {
 			steps {
 				echo "TEST STEP - RETRY WORKING"
 				retry(3) {
-					echo "THIS WILL WORK"
+					sh "echo THIS WILL WORK"
 				}
 			}
 		}
@@ -15,7 +15,7 @@ pipeline {
 			steps {
 				echo "TEST STEP - RETRY FAILING"
 				retry(3) {
-					echoTHIS WILL NOT WORK
+					sh "echoTHIS WILL NOT WORK"
 				}
 			}
 		}
@@ -24,7 +24,7 @@ pipeline {
 			steps {
 				echo "TEST STEP - TIMEOUT"
 				timeout(time: 3, unit: 'SECONDS') {
-					sleep 5s
+					sh "sleep 5s"
 				}
 			}
 		}
