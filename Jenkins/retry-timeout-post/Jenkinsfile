@@ -1,0 +1,47 @@
+pipeline {
+	agents any
+	
+	stages {
+		stage('STEP1') {
+			steps {
+				echo "TEST STEP - RETRY WORKING"
+				retry(3) {
+					echo "THIS WILL WORK"
+				}
+			}
+		}
+		
+		stage('STEP2') {
+			steps {
+				echo "TEST STEP - RETRY FAILING"
+				retry(3) {
+					echoTHIS WILL NOT WORK
+				}
+			}
+		}
+		
+		stage('STEP3') {
+			steps {
+				echo "TEST STEP - TIMEOUT"
+				timeout(time: 3, unit: 'SECONDS') {
+					sleep 5s
+				}
+			}
+		}
+	}
+	
+	post {
+		always {
+			echo "Always execute this step post completion" 
+		}
+		failure {
+			echo "Always execute this step on pipeline failure"
+		}
+		success {
+			echo "Always execute this step on pipeline success"
+		}
+		unstable {
+			echo "Always execute this step when pipeline is unstable"
+		}
+	}
+}
