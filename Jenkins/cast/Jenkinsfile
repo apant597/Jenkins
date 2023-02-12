@@ -1,0 +1,21 @@
+pipeline {
+	agent any
+	stages {
+		stage("Initialization") {      
+			steps {
+				sh 'echo ***** CAST HIGHLIGHT APPLICATION SCAN *****'
+			}
+		}
+		
+		stage("HL analysis") {      
+			steps {
+				sh '''java -jar  $JENKINS_HOME/Highlight-Automation-Command/HighlightAutomation.jar \
+                  --analyzerDir "$JENKINS_HOME/Highlight-Automation-Command/perl" \
+                  --workingDir "$JENKINS_HOME/OUTPUT" \
+                  --sourceDir "$JENKINS_HOME/ANDROID"  \
+                  --skipUpload \
+                  --technologies "Java"'''
+			}
+		}
+	}
+}
